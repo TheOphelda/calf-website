@@ -3,7 +3,7 @@
 import {
   Box,
   Container,
-  Grid,
+  Grid as MuiGrid,
   Typography,
   Stack,
   IconButton,
@@ -18,6 +18,9 @@ import {
   Phone,
 } from '@mui/icons-material';
 import Link from 'next/link';
+
+// Composant Grid personnalisé pour éviter les conflits de typage
+const Grid = (props: any) => <MuiGrid {...props} />;
 
 const Footer = () => {
   return (
@@ -81,19 +84,21 @@ const Footer = () => {
                 { text: 'Formations', href: '/formation-leadership' },
                 { text: 'Contact', href: '/contact' },
               ].map(({ text, href }) => (
-                <Link key={href} href={href} passHref>
-                  <Typography
-                    component="a"
-                    sx={{
-                      color: 'white',
-                      opacity: 0.8,
-                      '&:hover': { textDecoration: 'underline', opacity: 1 },
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {text}
-                  </Typography>
-                </Link>
+                <Typography
+                  key={href}
+                  component={Link}
+                  href={href}
+                  sx={{
+                    color: 'white',
+                    opacity: 0.8,
+                    '&:hover': { textDecoration: 'underline', opacity: 1 },
+                    textDecoration: 'none',
+                    display: 'block',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {text}
+                </Typography>
               ))}
             </Stack>
           </Grid>
@@ -137,30 +142,32 @@ communication@calfsn.com              </Box>
             © 2025 Campus Africain du Leadership au Féminin
           </Typography>
           <Stack direction="row" spacing={2}>
-            <Link href="/politique-de-confidentialite" passHref>
-              <Typography
-                component="a"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { textDecoration: 'underline' },
-                }}
-              >
-                Confidentialité
-              </Typography>
-            </Link>
-            <Link href="/conditions-d-utilisation" passHref>
-              <Typography
-                component="a"
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  '&:hover': { textDecoration: 'underline' },
-                }}
-              >
-                Conditions
-              </Typography>
-            </Link>
+            <Typography
+              component={Link}
+              href="/politique-de-confidentialite"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { textDecoration: 'underline' },
+                cursor: 'pointer',
+                display: 'block'
+              }}
+            >
+              Confidentialité
+            </Typography>
+            <Typography
+              component={Link}
+              href="/conditions-d-utilisation"
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                '&:hover': { textDecoration: 'underline' },
+                cursor: 'pointer',
+                display: 'block'
+              }}
+            >
+              Conditions
+            </Typography>
           </Stack>
         </Box>
       </Container>

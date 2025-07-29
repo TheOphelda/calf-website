@@ -1,98 +1,52 @@
-
 "use client";
 
-import { Box, Typography, Grid, Button, Container, useTheme } from "@mui/material";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import LanguageIcon from "@mui/icons-material/Language";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import SearchIcon from "@mui/icons-material/Search";
+import { Box, Typography, Container } from "@mui/material";
 import FormationsCard from "@/components/FormationsCard";
 import formationLeadership from "../../data/formation.json";
 import { PartnersBar } from "@/components/PartenariatComponent";
+import Image from 'next/image';
 
 
-export function ImpactComponent({ icon, title }: { icon: React.ReactNode; title: string }) {
-  return (
-    <Box
-      sx={{
-        bgcolor: "linear-gradient(135deg, #f9f7ff 0%, #f0ebff 100%)",
-        borderRadius: 4,
-        boxShadow: "0 4px 20px rgba(132, 51, 186, 0.1)",
-        p: 3,
-        minWidth: 180,
-        minHeight: 180,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "all 0.3s ease-in-out",
-        cursor: "pointer",
-        border: "1px solid rgba(132, 51, 186, 0.1)",
-        "&:hover": {
-          boxShadow: "0 15px 40px rgba(132, 51, 186, 0.2)",
-          transform: "translateY(-8px)",
-          bgcolor: "linear-gradient(135deg, #f0ebff 0%, #e6e1ff 100%)",
-        },
+
+const PartnerLogo = ({ name }: { name: string }) => (
+  <Box sx={{ position: "relative", width: 48, height: 48, top: 22 }}>
+    <Image
+      src="/assets/images/logo.png"
+      alt={`Logo ${name}`}
+      width={64}
+      height={64}
+      sizes="(max-width: 768px) 48px, 64px"
+      loading="lazy"
+      quality={85}
+      style={{
+        objectFit: "contain",
+        width: "100%",
+        height: "100%"
       }}
-    >
-      <Box
-        sx={{
-          bgcolor: "linear-gradient(135deg, #8433bb 0%, #6a11cb 100%)",
-          borderRadius: "50%",
-          width: 72,
-          height: 72,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          mb: 2.5,
-          boxShadow: "0 4px 12px rgba(132, 51, 186, 0.25)",
-        }}
-      >
-        {icon}
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 700,
-          fontSize: "1.1rem",
-          textAlign: "center",
-          color: "#1a064f",
-          whiteSpace: "pre-line",
-          lineHeight: 1.3,
-          fontFamily: "'Inter', sans-serif",
-        }}
-      >
-        {title}
-      </Typography>
-    </Box>
-  );
-}
-
+    />
+  </Box>
+);
 
 const partners = [
   {
     name: "Harvard Business School",
-    logo: <img src="/assets/images/logo.png" alt="Harvard" style={{ height: 48  , position:"relative" , top:22} } />,
+    logo: <PartnerLogo name="Harvard Business School" />,
   },
   {
     name: "INSEAD",
-    logo: <img src="/assets/images/logo.png" alt="INSEAD" style={{ height: 48 , position:"relative" , top:22}} />,
+    logo: <PartnerLogo name="INSEAD" />,
   },
   {
     name: "MIT Sloan",
-    logo: <img src="/assets/images/logo.png" alt="MIT" style={{ height: 48 , position:"relative" , top:22}} />,
+    logo: <PartnerLogo name="MIT Sloan" />,
   },
   {
     name: "Stanford GSB",
-    logo: <img src="/assets/images/logo.png" alt="Stanford" style={{ height: 48, position:"relative" , top:22 }} />,
+    logo: <PartnerLogo name="Stanford GSB" />,
   },
 ];
 
-
 export default function Leadership() {
-  const theme = useTheme();
-  
   return (
     <Box sx={{ position: "relative", minHeight: "100vh", overflow: "hidden", bgcolor: "#f9fafb" }}>
       <Box
@@ -113,7 +67,7 @@ export default function Leadership() {
             width: "100%",
             height: "100%",
             zIndex: 1,
-            background: "linear-gradient(135deg,  #6a11cb 0%, rgba(5, 19, 42, 0.54) 100%)",
+            background: "linear-gradient(135deg, #6a11cb 0%, rgba(5, 19, 42, 0.54) 100%)",
           }}
         />
         <video
@@ -176,51 +130,46 @@ export default function Leadership() {
         </Container>
       </Box>
 
-
-
-<Box sx={{ 
-  py: 10, 
-  background: "linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%)",
-  position: "relative"
-}}>
+      <Box sx={{ 
+        py: 10, 
+        background: "linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%)",
+        position: "relative"
+      }}>
   
  
   
-  <Container sx={{ position: "relative", zIndex: 3 }}>
-    <Typography
-      variant="h5"
-      sx={{
-        textAlign: "center",
-        fontWeight: 600,
-        mb: 6,
-        color: "#4a5568",
-        fontSize: { xs: "1.25rem", md: "1.5rem" },
-        maxWidth: 600,
-        mx: "auto",
-        px: 2
-      }}
-    >
-      Rejoignez les entreprises qui nous font déjà confiance
-    </Typography>
-    
-     <Box sx={{
-                background: "white",
-                borderRadius: 4,
-                boxShadow: "0 10px 35px rgba(0,0,0,0.05)",
-                p: 4,
-                overflow: "hidden",
-              }}>
-                <PartnersBar
-                text=""
-                               partners={partners}
-  
-                />
-              </Box>
-  </Container>
-  
-</Box>
+        <Container sx={{ position: "relative", zIndex: 3 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              textAlign: "center",
+              fontWeight: 600,
+              mb: 6,
+              color: "#4a5568",
+              fontSize: { xs: "1.25rem", md: "1.5rem" },
+              maxWidth: 600,
+              mx: "auto",
+              px: 2
+            }}
+          >
+            Rejoignez les entreprises qui nous font déjà confiance
+          </Typography>
+          
+          <Box sx={{
+            background: "white",
+            borderRadius: 4,
+            boxShadow: "0 10px 35px rgba(0,0,0,0.05)",
+            p: 4,
+            overflow: "hidden",
+          }}>
+            <PartnersBar
+              text=""
+              partners={partners}
+            />
+          </Box>
+        </Container>
+      </Box>
 
-    
       <Container sx={{ py: 8 }}>
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <Typography
@@ -247,73 +196,78 @@ export default function Leadership() {
           </Typography>
         </Box>
         
-        <Grid container spacing={4}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }, gap: 4 }}>
           {formationLeadership.leadership.map((formation, index) => (
-            <Grid >
-              <Box sx={{ 
-                height: "100%",
-                transition: "transform 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                }
-              }}>
-                <FormationsCard
-                  title={formation.title}
-                  trainer={formation.trainer}
-                  target={formation.target}
-                  objectives={formation.objectives}
-                  duration={formation.duration}
-                  location={formation.location}
-                  price={formation.price}
-                />
-              </Box>
-            </Grid>
+            <Box key={index} sx={{ 
+              height: "100%",
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-5px)",
+              }
+            }}>
+              <FormationsCard
+                title={formation.title}
+                trainer={formation.trainer}
+                target={formation.target}
+                objectives={formation.objectives}
+                duration={formation.duration}
+                location={formation.location}
+                price={formation.price}
+              />
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
-    
       <Box sx={{ py: 0, bgcolor: "#f8f9fc", textAlign: "center" }}>
-  <Container>
-    <Typography
-      variant="h3"
-      sx={{
-        fontWeight: 700,
-        color: "#1a064f",
-        mb: 3,
-        fontSize: { xs: "1.8rem", md: "2.2rem" },
-      }}
-    >
-Tous les modules incluent     </Typography>
+        <Container>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              color: "#1a064f",
+              mb: 3,
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
+            }}
+          >
+            Tous les modules incluent
+          </Typography>
 
 
-    <Box sx={{ mt: 4, display: "flex", justifyContent: "center", flexDirection: "column", gap: 2, alignItems: "center" , mb:4}}>
-      {[
-        "Un certificat de participation",
-        "Une approche simple, en français ou en wolof selon les profils",
-        "Du mentorat post-formation (3 mois)",
-        "Des opportunités de mise en réseau ou de micro-financement"
-      ].map((item, index) => (
-        <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{
-            width: 24,
-            height: 24,
-            bgcolor: "#48bb78",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "left",
-            justifyContent: "center",
-            mr: 1
+          <Box sx={{ 
+            mt: 4, 
+            display: "flex", 
+            justifyContent: "center", 
+            flexDirection: "column", 
+            gap: 2, 
+            alignItems: "center", 
+            mb: 4
           }}>
-            <Typography variant="body2" sx={{ color: "white", fontWeight: 700 }}>✓</Typography>
+            {[
+              "Un certificat de participation",
+              "Une approche simple, en français ou en wolof selon les profils",
+              "Du mentorat post-formation (3 mois)",
+              "Des opportunités de mise en réseau ou de micro-financement"
+            ].map((item, index) => (
+              <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
+                <Box sx={{
+                  width: 24,
+                  height: 24,
+                  bgcolor: "#48bb78",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  mr: 1
+                }}>
+                  <Typography variant="body2" sx={{ color: "white", fontWeight: 700 }}>✓</Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: "#4a5568" }}>{item}</Typography>
+              </Box>
+            ))}
           </Box>
-          <Typography variant="body2" sx={{ color: "#4a5568" }}>{item}</Typography>
-        </Box>
-      ))}
-    </Box>
-  </Container>
-</Box>
-
+        </Container>
+      </Box>
     </Box>
   );
 }

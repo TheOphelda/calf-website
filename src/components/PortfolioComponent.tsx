@@ -1,15 +1,57 @@
 "use client";
 
-import React from 'react';
-import { Box, Typography, Stack, IconButton, Grid, Paper } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import SchoolIcon from "@mui/icons-material/School";
-import CampaignIcon from "@mui/icons-material/Campaign";
-import GavelIcon from "@mui/icons-material/Gavel";
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+// Composants Material-UI optimisés
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import Paper from '@mui/material/Paper';
+import Skeleton from '@mui/material/Skeleton';
+
+// Chargement dynamique des icônes pour réduire la taille du bundle initial
+const FacebookIcon = dynamic(
+  () => import('@mui/icons-material/Facebook'),
+  { loading: () => <Skeleton variant="circular" width={24} height={24} />, ssr: false }
+);
+
+const TwitterIcon = dynamic(
+  () => import('@mui/icons-material/Twitter'),
+  { loading: () => <Skeleton variant="circular" width={24} height={24} />, ssr: false }
+);
+
+const LinkedInIcon = dynamic(
+  () => import('@mui/icons-material/LinkedIn'),
+  { loading: () => <Skeleton variant="circular" width={24} height={24} />, ssr: false }
+);
+
+const PinterestIcon = dynamic(
+  () => import('@mui/icons-material/Pinterest'),
+  { loading: () => <Skeleton variant="circular" width={24} height={24} />, ssr: false }
+);
+
+const AccountTreeIcon = dynamic(
+  () => import('@mui/icons-material/AccountTree'),
+  { loading: () => <Skeleton variant="rectangular" width={24} height={24} />, ssr: false }
+);
+
+const SchoolIcon = dynamic(
+  () => import('@mui/icons-material/School'),
+  { loading: () => <Skeleton variant="rectangular" width={24} height={24} />, ssr: false }
+);
+
+const CampaignIcon = dynamic(
+  () => import('@mui/icons-material/Campaign'),
+  { loading: () => <Skeleton variant="rectangular" width={24} height={24} />, ssr: false }
+);
+
+const GavelIcon = dynamic(
+  () => import('@mui/icons-material/Gavel'),
+  { loading: () => <Skeleton variant="rectangular" width={24} height={24} />, ssr: false }
+);
+
 import Image from "next/image";
 import team from "@/data/portfolio.json";
 
@@ -114,9 +156,14 @@ export default function TeamPresentation() {
             >
               <Image
                 src={person.avatar}
-                alt={person.name}
-                width={80}
-                height={80}
+                alt={`Photo de ${person.name}`}
+                width={160}
+                height={160}
+                sizes="(max-width: 768px) 80px, 160px"
+                loading="lazy"
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+Cjwvc3ZnPg=="
                 style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
             </Box>

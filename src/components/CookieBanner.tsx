@@ -1,14 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Paper, Box, Button, IconButton, Typography } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const CookieBanner = () => {
-  const [cookiesAccepted, setCookiesAccepted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [cookiesAccepted, setCookiesAccepted] = useState(true);
 
-  if (cookiesAccepted) return null;
+  useEffect(() => {
+    // Vérifier si les cookies ont déjà été acceptés
+    const accepted = localStorage.getItem('cookiesAccepted') === 'true';
+    setCookiesAccepted(accepted);
+    setMounted(true);
+  }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setCookiesAccepted(true);
+  };
+
+  if (!mounted || cookiesAccepted) return null;
 
   return (
     <AnimatePresence>
@@ -54,7 +67,7 @@ const CookieBanner = () => {
               size="small"
               variant="outlined"
               color="inherit"
-              onClick={() => setCookiesAccepted(true)}
+              onClick={handleAccept}
               sx={{ 
                 borderRadius: 2, 
                 fontWeight: 600,
@@ -71,7 +84,7 @@ const CookieBanner = () => {
               size="small"
               variant="contained"
               color="primary"
-              onClick={() => setCookiesAccepted(true)}
+              onClick={handleAccept}
               sx={{ 
                 borderRadius: 2, 
                 fontWeight: 600,
@@ -85,7 +98,7 @@ const CookieBanner = () => {
             <IconButton
               size="small"
               color="inherit"
-              onClick={() => setCookiesAccepted(true)}
+              onClick={handleAccept}
               aria-label="Fermer la bannière cookies"
               sx={{ ml: 1 }}
             >

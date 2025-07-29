@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -27,8 +26,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Navbar = () => {
+  const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

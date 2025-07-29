@@ -1,10 +1,11 @@
 "use client";
 
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import Image from "next/image";
+// Imports optimisés pour le tree-shaking
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Image from 'next/image';
 
 interface PresentationComponentProps {
   image: string;
@@ -128,10 +129,14 @@ export default function PresentationComponent({
           >
             <Image
               src={image}
-            alt="Presentation"
+              alt={title || "Image de présentation"}
               fill
               style={{ objectFit: "cover" }}
-              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
+              quality={85}
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+Cjwvc3ZnPg=="
              
         
             />
