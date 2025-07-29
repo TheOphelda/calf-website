@@ -1,0 +1,36 @@
+{
+  "presentations": [
+    {
+      "id": 1,
+      "image": "/assets/images/image.png",
+      "stat": {
+        "icon": "AssignmentTurnedInOutlined",
+        "value": "+ 200 ALUMNIS"
+      },
+      "overline": "A PROPOS DE NOUS",
+      "title": "LE CALF",
+      "description": "Le Campus Africain du Leadership au Féminin (CALF) est une initiative panafricaine dédiée à l’autonomisation des femmes par la formation professionnelle, le développement du leadership et la solidarité. À travers un accompagnement sur mesure, le CALF aide chaque femme à devenir actrice de son avenir et moteur de changement dans sa communauté.",
+      "button": {
+        "text": "EN SAVOIR PLUS SUR NOUS"
+      },
+      "href":"/qui-sommes-nous"
+      
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/OIP.jpeg",
+      "stat": {
+        "icon": "AssignmentTurnedInOutlined",
+        "value": "+ 500 FEMMES FORMÉES"
+      },
+      "overline": "LEADERSHIP FÉMININ EN AFRIQUE",
+      "title": "Empowerment des femmes au Sénégal et en Afrique",
+      "description": "Dans un contexte où de nombreuses femmes restent en marge des dynamiques économiques, le CALF s’engage à former des femmes leaders, compétentes, confiantes et conscientes de leur rôle dans la transformation du continent. Le leadership féminin est un levier fondamental pour une société plus équitable.",
+      "button": {
+        "text": "EN SAVOIR PLUS"
+      },
+            "href":"/formation-leadership"
+
+    }
+  ]
+}

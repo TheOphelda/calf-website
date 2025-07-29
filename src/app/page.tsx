@@ -1,103 +1,238 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import ServicesCard from "@/components/ServicesComponent";
+import { Box, Typography, Container, Stack , Button } from "@mui/material";
+import { motion } from "framer-motion";
+import serviceInfo from "@/data/service.json";
+import presentationInfo from "@/data/presentation.json";
+import PresentationComponent from "@/components/PresentationComponent";
+import DomaineComponent from "@/components/DomaineComponent";
+import TemoignageComponent from "@/components/Temoignage";
+
+export default function AccueilBanner() {
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <Box
+        sx={{
+          position: "relative",
+          minHeight: { xs: 480, md: 601 },
+          display: "flex",
+          alignItems: "center",
+          color: "white",
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          overflow: "hidden",
+          borderBottom: "5px solid rgba(44, 12, 96, 0.21)",
+        }}
+      >
+        <svg
+          width="650"
+          height="650"
+          viewBox="0 0 650 650"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{
+            position: "absolute",
+            left: -120,
+            top: -80,
+            zIndex: 1,
+          }}
+        >
+          <circle cx="325" cy="325" r="250" fill="yellow" fillOpacity="0.07" />
+          <circle cx="325" cy="325" r="180" fill="yellow" fillOpacity="0.09" />
+          <circle cx="325" cy="325" r="110" fill="yellow" fillOpacity="0.13" />
+        </svg>
+        <svg
+          width="300"
+          height="300"
+          viewBox="0 0 300 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{
+            position: "absolute",
+            right: -80,
+            top: 60,
+            zIndex: 1,
+          }}
+        >
+          <circle cx="150" cy="150" r="120" fill="yellow" fillOpacity="0.08" />
+          <circle
+            cx="150"
+            cy="150"
+            r="90"
+            stroke="yellow"
+            strokeDasharray="10 10"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.6"
+          />
+        </svg>
+
+        <Container maxWidth="md" sx={{ zIndex: 2, position: "relative" }}>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={4}
+            alignItems="center"
+            justifyContent="space-between"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <Box flex={4}>
+             
+
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.2 }}
+>
+  <Typography
+    variant="h1" 
+    sx={{
+      fontWeight: 600,
+      width:"85%",
+      fontSize: "2.5rem",
+      lineHeight: 1.15,
+      letterSpacing: { xs: 0, sm: -1 },
+      background: "rgb(46, 14, 106) ",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      mb: { xs: 1.5, md: 2.5 },
+      maxWidth: "1000px",
+      position: "relative",
+      '&::after': {
+        content: '""',
+        position: "absolute",
+        bottom: -10,
+        left: 0,
+        width: "100px",
+        height: "5px",
+        background: "linear-gradient(90deg, #5e17eb, #c533ff)",
+        borderRadius: 3
+      }
+    }}
+  >
+    Autonomisation des femmes par la formation professionnelle et le leadership
+  </Typography>
+</motion.div>
+
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.4 }}
+>
+  <Typography
+    component="p"
+    sx={{
+      fontWeight: 400,
+      fontSize: { 
+        xs: "1rem", 
+        sm: "1.15rem", 
+        md: "1.35rem" 
+      },
+      lineHeight: 1.6,
+      maxWidth: "700px",
+      mb: { xs: 2, md: 4 },
+      color: "#4a4458",
+      position: "relative",
+      pl: 3,
+      '&::before': {
+        content: '""',
+        position: "absolute",
+        left: 0,
+        top: "0.5em",
+        height: "70%",
+        width: "3px",
+        background: "linear-gradient(to bottom, #c533ff, #5e17eb)",
+        borderRadius: 3
+      }
+    }}
+  >
+    Découvrez notre impact et rejoignez le Campus Africain du Leadership au Féminin 
+    pour l'autonomisation des Femmes.
+  </Typography>
+   <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: "1.1rem",
+                fontWeight: 600,
+                bgcolor: "#FFD600",
+                color: "#1a064f",
+                "&:hover": { bgcolor: "#ffc400" },
+                boxShadow: "0 4px 15px rgba(255, 214, 0, 0.4)",
+                borderRadius: 2,
+              }}
+            >
+              Explorer nos formations 
+              </Button>
+</motion.div>
+            </Box>
+
+            <Box
+              flex={1}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              sx={{ mt: { xs: 4, md: 0 } }}
+            >
+              <Box
+                component="img"
+                src="/assets/images/womanComputer.png"
+                alt="Femmes en formation"
+                sx={{
+                  height: "auto",
+                  width: { sm: "0%", md: "100%", xs: "90%" },
+                  position: "absolute",
+                }}
+              />
+            </Box>
+          </Stack>
+        </Container>
+        
+      </Box>
+
+ 
+        {presentationInfo.presentations.map((item) => {
+
+          return (
+            <PresentationComponent
+              key={item.id}
+              image={item.image}
+              stat={item.stat}
+              overline={item.overline}
+              title={item.title}
+              description={item.description}
+              button={item.button}
+              href={item.href}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          );
+        })}
+
+
+      <Box>
+        <DomaineComponent />
+      </Box>
+  <Box
+
+           sx={{
+          display: "flex",
+          
+        }}
+      >
+        {serviceInfo.services.map((info, index) => (
+          <ServicesCard
+            key={index}
+            title={info.title}
+            detail={info.description}
+            href={info.href}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        ))}
+      </Box>
+      <Box>
+        <TemoignageComponent />
+      </Box>
+
+    
     </div>
   );
 }

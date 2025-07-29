@@ -1,0 +1,324 @@
+
+'use client';
+
+import { useState } from 'react';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  IconButton,
+  Container,
+  Divider,
+  Drawer,
+  List,
+  ListItem,
+  CssBaseline,
+  Slide,
+  useScrollTrigger,
+} from '@mui/material';
+import {
+  Close,
+  Menu,
+  Search,
+  ArrowDropDown,
+  AccountCircle,
+} from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+  
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  
+  const navItems = [
+    { 
+      label: "Qui sommes-nous", 
+      path: "/qui-sommes-nous",
+      
+    },
+    { 
+      label: "Formations techniques", 
+      path: "/formation-technique",
+      
+    },
+    { 
+      label: "Formations leadership", 
+      path: "/formation-leadership",
+      
+    },
+    { 
+      label: "Soutien ", 
+      path: "/soutien",
+      
+    }
+  ];
+
+  const trigger = useScrollTrigger();
+
+  return (
+    <>
+      <CssBaseline />
+      
+
+        <AppBar
+          position="sticky"
+          sx={{
+            bgcolor: "white",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)",
+            py: 1,
+          }}
+          elevation={0}
+        >
+          <Container maxWidth="lg">
+            <Toolbar sx={{ 
+              justifyContent: "space-between", 
+              px: 0,
+              position: "relative"
+            }}>
+              <Box 
+                component={Link} 
+                href="/" 
+                sx={{ 
+                  display: "flex", 
+                  alignItems: "center",
+                  textDecoration: "none",
+                  mr: 4
+                }}
+              >
+                <Box
+  sx={{
+    width: 50,
+    height: 50,
+    bgcolor: "#F3E5F5",
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    mr:2
+  }}
+>
+  <img 
+    src="/assets/images/logo.png" 
+    alt="Logo" 
+    style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+  />
+</Box>
+
+            
+                <Box>
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      fontWeight: 800, 
+                      color: "#1a064f",
+                      lineHeight: 1.1
+                    }}
+                  >
+                    Campus Leadership
+                  </Typography>
+                  <Typography 
+                    variant="caption" 
+                    sx={{ 
+                      fontWeight: 500, 
+                      color: "#6a11cb",
+                      letterSpacing: 0.5
+                    }}
+                  >
+                    Femmes • Afrique • Excellence
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box 
+                sx={{ 
+                  display: { xs: "none", md: "flex" },
+                  alignItems: "center",
+                  flex: 1,
+                  justifyContent: "center"
+                }}
+              >
+                {navItems.map((item, index) => (
+                  <Box 
+                    key={index}
+                    sx={{ 
+                      position: "relative",
+                      mx: 1
+                    }}
+                    onMouseEnter={() => setHoveredItem(index)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <Button
+                      component={Link}
+                      href={item.path}
+                      sx={{ 
+                        fontWeight: 600, 
+                        fontSize: "0.95rem",
+                        color: hoveredItem === index ? "#6a11cb" : "#444",
+                        textTransform: "none",
+                        px: 2,
+                        py: 1,
+                        position: "relative",
+                        "&:after": {
+                          content: '""',
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          height: "2px",
+                          bgcolor: "#6a11cb",
+                          transform: hoveredItem === index ? "scaleX(1)" : "scaleX(0)",
+                          transformOrigin: "bottom center",
+                          transition: "transform 0.3s ease"
+                        }
+                      }}
+                    >
+                      {item.label}
+                    </Button>
+                   
+                  </Box>
+                ))}
+              </Box>
+
+              <Box sx={{ 
+                display: { xs: "none", md: "flex" }, 
+                alignItems: "center",
+                gap: 2
+              }}>
+               
+                <Button 
+                  variant="contained" 
+                  component={Link}
+                  href="/contact" 
+                  sx={{ 
+                    fontWeight: 600, 
+                    bgcolor: "#6a11cb",
+                    "&:hover": { bgcolor: "#2575fc" },
+                    borderRadius: 50,
+                    px: 3,
+                    py: 1,
+                    boxShadow: "0 4px 15px rgba(106, 17, 203, 0.3)",
+                    textTransform: "none"
+                  }}
+                >
+                  Contact
+                </Button>
+              </Box>
+
+              <IconButton
+                sx={{ 
+                  display: { xs: "flex", md: "none" },
+                  color: "#6a11cb"
+                }}
+                onClick={handleDrawerToggle}
+              >
+                <Menu />
+              </IconButton>
+            </Toolbar>
+          </Container>
+        </AppBar>
+
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: "100%",
+            maxWidth: 320,
+            bgcolor: "#1a064f",
+            color: "white"
+          }
+        }}
+      >
+        <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end" }}>
+          <IconButton onClick={handleDrawerToggle} sx={{ color: "white" }}>
+            <Close />
+          </IconButton>
+        </Box>
+        <Box sx={{ px: 3, py: 2, display: "flex", alignItems: "center", mb: 3 }}>
+          <AccountCircle sx={{ fontSize: 40, mr: 2 }} />
+          <Typography variant="h6">Espace membre</Typography>
+        </Box>
+        <List>
+          {navItems.map((item, index) => (
+            <Box key={index}>
+              <ListItem 
+                sx={{ 
+                  py: 1.5,
+                  "&:hover": { bgcolor: "rgba(255,255,255,0.1)" }
+                }}
+              >
+                <Button
+                  component={Link}
+                  href={item.path}
+                  fullWidth
+                  sx={{ 
+                    justifyContent: "flex-start", 
+                    fontWeight: 500,
+                    color: "white",
+                    textAlign: "left"
+                  }}
+                >
+                  {item.label}
+                </Button>
+              </ListItem>
+              {item.subItems && item.subItems.map((subItem, subIndex) => (
+                <ListItem 
+                  key={subIndex}
+                  sx={{ 
+                    py: 1,
+                    pl: 4,
+                    "&:hover": { bgcolor: "rgba(255,255,255,0.05)" }
+                  }}
+                >
+                  <Button
+                    component={Link}
+                    href={subItem.path}
+                    fullWidth
+                    sx={{ 
+                      justifyContent: "flex-start", 
+                      fontWeight: 400,
+                      color: "rgba(255,255,255,0.8)",
+                      fontSize: "0.9rem"
+                    }}
+                  >
+                    {subItem.label}
+                  </Button>
+                </ListItem>
+              ))}
+              <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", my: 1 }} />
+            </Box>
+          ))}
+          <ListItem sx={{ py: 2, justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              component={Link}
+              href="/contact"
+              fullWidth
+              sx={{
+                bgcolor: "white",
+                color: "#1a064f",
+                fontWeight: 600,
+                borderRadius: 2,
+                py: 1.5,
+                "&:hover": { bgcolor: "#f5f5f5" }
+              }}
+            >
+              Contactez-nous
+            </Button>
+          </ListItem>
+        </List>
+      </Drawer>
+    </>
+  );
+};
+
+export default Navbar;
+

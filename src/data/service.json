@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "title": "Éligibilité financière",
+      "description": "Des options de financement accessibles : (Entreprises ONG, État, Fondations, Collectivités...) Pour permettre à toutes les femmes motivées de rejoindre le campus, quel que soit leur budget et leur niveau d'étude.",
+"href":"/soutien"    },
+    {
+      "title": "Formations adaptées en leadership et métiers techniques",
+      "description": "Programmes conçus sur mesure pour répondre aux réalités du marché de l’emploi et aux ambitions professionnelles des femmes africaines. (Leadership, agriculture, transformation de produits agricoles, hôtellerie et restauration, tourisme, immobilier, numérique et digital...)",
+"href":"/formation-technique/"    }
+  ]
+}

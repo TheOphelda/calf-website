@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Aissatou",
+    "age": "34 ans",
+    "city": "Thiès",
+    "testimonial": "Le CALF m’a permis de suivre une formation en bureautique alors que je n’avais jamais touché un ordinateur. J’ai aussi appris à faire un CV, me présenter à l’oral… et j’ai trouvé un emploi dans une structure locale. C’est une vraie renaissance pour moi.",
+    "image": "/images/testimonial1.jpg",
+    "subtitle": "A group of six women wearing vibrant, flowing outfits stand confidently around a wooden bench in une salle moderne."
+  },
+  {
+    "name": "Fatou",
+    "age": "28 ans",
+    "city": "Dakar",
+    "testimonial": "Avant de rejoindre le CALF, je n’osais même pas parler en public. Grâce aux ateliers de leadership et au coaching, j’ai gagné en assurance et j’ai lancé mon propre projet d’agro-transformation. Aujourd’hui, je forme d’autres jeunes femmes à leur tour.",
+    "image": "/images/testimonial2.jpg",
+    "subtitle": "A group of women practicing martial arts in a well-lit room, each holding a training weapon."
+  },
+   {
+    "name": "Rassoul",
+    "age": "28 ans",
+    "city": "Dakar",
+    "testimonial": "Avant de rejoindre le CALF, je n’osais même pas parler en public. Grâce aux ateliers de leadership et au coaching, j’ai gagné en assurance et j’ai lancé mon propre projet d’agro-transformation. Aujourd’hui, je forme d’autres jeunes femmes à leur tour.",
+    "image": "/images/testimonial2.jpg",
+    "subtitle": "A group of women practicing martial arts in a well-lit room, each holding a training weapon."
+  }
+]

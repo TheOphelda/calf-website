@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "Lightbulb",
+    "title": "Développement endogène",
+    "description": "Développement personnel, affirmation de soi, communication, intelligence émotionnelle, prise de parole en public, formations techniques dans divers domaines.",
+    "image": "man holding incandescent bulb"
+  },
+  {
+    "icon": "BusinessWoman",
+    "title": "Entrepreneuriat féminin",
+    "description": "De l’idée au projet : étude de marché, business model, gestion, pitch et accompagnement au financement.",
+    "image": "woman in black and red crew neck t-shirt"
+  },
+  {
+    "icon": "Chair",
+    "title": "Insertion professionnelle",
+    "description": "Rédaction de CV, entretien d’embauche, savoir-être en entreprise, développement de carrière, culture professionnelle, coaching, préparation, plan de développement des compétences...",
+    "image": "woman in brown and white fur coat sitting on chair"
+  },
+  {
+    "icon": "Code",
+    "title": "Compétences techniques",
+    "description": "Bureautique, outils digitaux, réseaux sociaux pro, création de contenu, initiation au codage (Compétences selon les sessions, les métiers et les domaines).",
+    "image": "the big bang theory dvd"
+  }
+]

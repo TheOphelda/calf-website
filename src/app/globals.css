@@ -1,26 +1,57 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out;
+  background-color: rgb(37, 3, 59);
+  color: rgb(0, 0, 0);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+header nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header nav a {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  header nav {
+    display: flex;
+    justify-content: space-around;
+  }
 }

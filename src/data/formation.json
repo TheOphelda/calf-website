@@ -1,0 +1,133 @@
+{
+  "leadership": [
+    {
+      "title": "Leadership transformationnelle",
+      "objectives": "Développer une posture de leader inspirant et mobilisateur.",
+      "duration": "2 jours – présentiel",
+      "target": "Femmes cadres, managers et porteuses de projets",
+      "price": "150 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Expert.e en coaching transformationnel"
+    },
+    {
+      "title": "Leadership et Développement personnel",
+      "objectives": "Renforcer la confiance en soi, l’intelligence émotionnelle et la capacité à influencer.",
+      "duration": "1 jour – présentiel",
+      "target": "Toute femme souhaitant développer son potentiel personnel",
+      "price": "100 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Coach certifié en développement personnel"
+    },
+   
+   
+    {
+      "title": "Leadership & Entrepreneuriat",
+      "objectives": "Acquérir les clés pour diriger un projet entrepreneurial avec assurance.",
+      "duration": "3 jours – hybride (présentiel + en ligne)",
+      "target": "Femmes entrepreneures ou en phase de création d’entreprise",
+      "price": "180 000 FCFA",
+      "location": "Dakar + sessions Zoom",
+      "trainer": "Entrepreneur.e et coach en business leadership"
+    },
+    {
+      "title": "Leadership et numérique",
+      "objectives": "Comprendre les enjeux du digital pour le leadership moderne.",
+      "duration": "2 jours – en ligne",
+      "target": "Femmes leaders souhaitant intégrer le numérique dans leur stratégie",
+      "price": "130 000 FCFA",
+      "location": "Zoom",
+      "trainer": "Consultant.e en stratégie digitale"
+    },
+    {
+      "title": "Leadership & Entrepreneuriat : Lever les freins, activer le potentiel",
+      "objectives": "Mettre en lumière les défis spécifiques rencontrés par les femmes entrepreneures au Sénégal et proposer des leviers d’action concrets pour renforcer leur leadership, faciliter l’accès aux financements, et structurer leur activité.",
+      "duration": "2 jours – hybride",
+      "target": "Femmes entrepreneures, actrices économiques, porteuses de projets",
+      "price": "120 000 FCFA",
+      "location": "Dakar + en ligne",
+      "trainer": "Mariama Dieng, entrepreneuse, PDG de Cosmo Concept, fondatrice du NEDA et du Boon des Patriotes"
+    }, {
+      "title": "Femmes leaders & Méthode Agile : Innover, fédérer, réussir autrement",
+      "objectives": "Découvrir et appliquer les principes de l’agilité pour piloter des projets, fédérer les équipes et exercer un leadership plus adaptatif et inclusif.",
+      "duration": "1 jour – présentiel",
+      "target": "Femmes cadres, managers, entrepreneures",
+      "price": "90 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Formatrice en gestion de projet agile et leadership féminin"
+    }
+  ],
+  "technical": [
+    {
+      "title": "Installation Solaire de Base",
+      "objectives": "Apprendre à installer un petit système solaire (pour maison ou commerce) et débuter une activité de service ou maintenance solaire. Inclut une semaine sur l’entrepreneuriat de proximité.",
+      "duration": "4 semaines",
+      "target": "Adultes souhaitant se former dans l'énergie solaire",
+      "price": "80 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Technicien.ne en énergie solaire"
+    },
+    {
+      "title": "Couture & Design Numérique",
+      "objectives": "Apprendre à coudre et à créer des modèles avec des outils comme Canva ou Tailornova. Création d’une mini-collection à la fin. Apprentissage des bases de la vente en ligne.",
+      "duration": "6 semaines (2 jours/semaine)",
+      "target": "Débutantes ou intermédiaires en couture et design",
+      "price": "60 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Styliste et formatrice en design numérique"
+    },
+    {
+      "title": "Création de Site Web avec WordPress",
+      "objectives": "Savoir créer un site web simple pour lancer un projet ou proposer ce service à d’autres.",
+      "duration": "5 semaines",
+      "target": "Débutant.e.s souhaitant une présence en ligne",
+      "price": "50 000 FCFA",
+      "location": "En ligne",
+      "trainer": "Développeur WordPress"
+    },
+    {
+      "title": "Transformation Agroalimentaire (produits locaux)",
+      "objectives": "Apprendre à transformer le bissap, gingembre, bouye en jus, confitures, etc., et les vendre localement. Base en marketing local (emballage, prix, hygiène).",
+      "duration": "3 semaines",
+      "target": "Femmes ou jeunes intéressé.e.s par l'agroalimentaire",
+      "price": "55 000 FCFA (ingrédients inclus)",
+      "location": "Thiès",
+      "trainer": "Spécialiste en agroalimentaire local"
+    },
+    {
+      "title": "Réparation Informatique & Téléphones",
+      "objectives": "Savoir réparer les pannes simples sur PC et smartphones, pour monter un petit service de dépannage.",
+      "duration": "4 semaines",
+      "target": "Jeunes en recherche de compétences techniques pratiques",
+      "price": "60 000 FCFA",
+      "location": "Dakar + en ligne",
+      "trainer": "Technicien en maintenance informatique"
+    },
+    {
+      "title": "Design Graphique & Réseaux Sociaux",
+      "objectives": "Apprendre à créer de jolis visuels avec Canva et gérer une page pro sur Instagram ou WhatsApp pour vendre ses produits.",
+      "duration": "3 semaines",
+      "target": "Entrepreneur.e.s, commerçant.e.s, créateur.rice.s de contenu",
+      "price": "70 000 FCFA",
+      "location": "Ziguinchor",
+      "trainer": "Designer graphique et community manager"
+    },
+    {
+      "title": "Initiation à la Maçonnerie et au Carrelage (spécial femmes)",
+      "objectives": "S’initier à la maçonnerie, à la pose de carrelage et voir les débouchés dans le BTP.",
+      "duration": "5 semaines",
+      "target": "Femmes intéressées par les métiers du bâtiment",
+      "price": "70 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Maçon.ne professionnel.le"
+    } ,{
+      "title": "Rayonner Authentiquement : Personal Branding et Storytelling pour le Leadership Féminin Africain",
+      "objectives": "Acquérir les outils pour construire une image de marque personnelle forte et raconter son histoire de manière authentique et impactante, tout en tenant compte des réalités culturelles africaines.",
+      "duration": "2 jours – présentiel",
+      "target": "Femmes leaders, entrepreneures, communicantes",
+      "price": "130 000 FCFA",
+      "location": "Dakar",
+      "trainer": "Coach en image, storytelling et leadership"
+    }
+  ]
+}
+

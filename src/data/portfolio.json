@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sokhna NDIAYE",
+    "title": "Fondatrice & Visionnaire",
+    "avatar": "/assets/images/team.jpeg",
+    "description": "Convaincue que l’éducation est un levier fondamental de transformation sociale, Sokhna a consacré plus de 18 ans à l’amélioration des systèmes d’enseignement supérieur et de formation professionnelle. Femme de convictions et entrepreneure dans l’âme, elle a créé le Campus Africain du Leadership au Féminin pour offrir aux femmes africaines un espace d’apprentissage et d’émancipation.",
+    "signature": "/assets/images/signature.png",
+    "socials": [
+      { "icon": "facebook", "url": "#" },
+      { "icon": "twitter", "url": "#" },
+      { "icon": "linkedin", "url": "#" }
+    ]
+  },
+  {
+    "name": "Dr Korka SALL",
+    "title": "Experte en leadership féminin et transformation sociale",
+    "avatar": "/assets/images/team.jpeg",
+    "description": "Dr Korka SALL est une experte engagée dans le développement du leadership féminin et la transformation sociale par l’éducation.",
+    "signature": "/assets/images/signature.png",
+    "socials": [
+      { "icon": "facebook", "url": "#" },
+      { "icon": "twitter", "url": "#" },
+      { "icon": "linkedin", "url": "#" }
+    ]
+  }
+]
