@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { Box, Typography, Stack, IconButton, Grid, Paper } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -12,6 +13,9 @@ import GavelIcon from "@mui/icons-material/Gavel";
 import Image from "next/image";
 import team from "@/data/portfolio.json";
 
+type SocialIconKey = 'facebook' | 'twitter' | 'pinterest' | 'linkedin';
+
+// Type assertion for social icons
 const socialIcons = {
   facebook: <FacebookIcon fontSize="small" />,
   twitter: <TwitterIcon fontSize="small" />,
@@ -79,7 +83,7 @@ export default function TeamPresentation() {
         justifyContent="center"
         alignItems="stretch"
       >
-        {team.map((person, idx) => (
+        {team.map((person) => (
           <Box
             key={person.name}
             sx={{
@@ -126,7 +130,7 @@ export default function TeamPresentation() {
               {person.description}
             </Typography>
             <Stack direction="row" spacing={1}>
-              {person.socials.map((s, i) => (
+              {person.socials.map((s: { icon: string; url: string }, i) => (
                 <IconButton
                   key={i}
                   href={s.url}
@@ -137,7 +141,7 @@ export default function TeamPresentation() {
                     "&:hover": { color: "#000" },
                   }}
                 >
-                  {socialIcons[s.icon]}
+                  {socialIcons[s.icon as SocialIconKey]}
                 </IconButton>
               ))}
             </Stack>
@@ -157,9 +161,9 @@ export default function TeamPresentation() {
         >
           Les pôles du CALF
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 3, justifyContent: 'center' }}>
           {poles.map((pole, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Box key={index} sx={{ width: '100%' }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -184,9 +188,9 @@ export default function TeamPresentation() {
                   {pole.description}
                 </Typography>
               </Paper>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );

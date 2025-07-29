@@ -15,18 +15,16 @@ import {
   List,
   ListItem,
   CssBaseline,
-  Slide,
   useScrollTrigger,
 } from '@mui/material';
 import {
   Close,
   Menu,
-  Search,
-  ArrowDropDown,
   AccountCircle,
 } from '@mui/icons-material';
-import { motion } from 'framer-motion';
+
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,7 +57,7 @@ const Navbar = () => {
     }
   ];
 
-  const trigger = useScrollTrigger();
+  useScrollTrigger(); // Used for scroll behavior
 
   return (
     <>
@@ -104,9 +102,11 @@ const Navbar = () => {
     mr:2
   }}
 >
-  <img 
+  <Image 
     src="/assets/images/logo.png" 
     alt="Logo" 
+    width={50}
+    height={50}
     style={{ width: "100%", height: "100%", objectFit: "cover" }} 
   />
 </Box>
@@ -269,33 +269,10 @@ const Navbar = () => {
                   {item.label}
                 </Button>
               </ListItem>
-              {item.subItems && item.subItems.map((subItem, subIndex) => (
-                <ListItem 
-                  key={subIndex}
-                  sx={{ 
-                    py: 1,
-                    pl: 4,
-                    "&:hover": { bgcolor: "rgba(255,255,255,0.05)" }
-                  }}
-                >
-                  <Button
-                    component={Link}
-                    href={subItem.path}
-                    fullWidth
-                    sx={{ 
-                      justifyContent: "flex-start", 
-                      fontWeight: 400,
-                      color: "rgba(255,255,255,0.8)",
-                      fontSize: "0.9rem"
-                    }}
-                  >
-                    {subItem.label}
-                  </Button>
-                </ListItem>
-              ))}
               <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", my: 1 }} />
             </Box>
           ))}
+          
           <ListItem sx={{ py: 2, justifyContent: "center" }}>
             <Button
               variant="contained"
