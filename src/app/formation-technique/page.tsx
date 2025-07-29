@@ -1,74 +1,16 @@
 "use client";
 
-import {
-  Box,
-  Typography,
-  Grid,
-  Button,
-  Container,
-  useTheme,
-} from "@mui/material";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import { useTheme } from '@mui/material/styles';
 
 import { PartnersBar } from "@/components/PartenariatComponent";
 import FormationsCard from "@/components/FormationsCard";
+import TechComponent from "@/components/TechComponent";
 import formationTech from "../../data/formation.json";
-
-export function TechComponent({ icon, title }: { icon: React.ReactNode; title: string }) {
-  return (
-    <Box
-      sx={{
-        bgcolor: "#f0f4ff",
-        borderRadius: 4,
-        boxShadow: "0 4px 20px rgba(51, 102, 186, 0.1)",
-        p: 3,
-        minWidth: 180,
-        minHeight: 180,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "all 0.3s ease-in-out",
-        cursor: "pointer",
-        border: "1px solid rgba(51, 102, 186, 0.1)",
-        "&:hover": {
-          boxShadow: "0 15px 40px rgba(51, 102, 186, 0.2)",
-          transform: "translateY(-8px)",
-          bgcolor: "#e6f0ff",
-        },
-      }}
-    >
-      <Box
-        sx={{
-          bgcolor: "#3366ba",
-          borderRadius: "50%",
-          width: 72,
-          height: 72,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          mb: 2.5,
-          boxShadow: "0 4px 12px rgba(51, 102, 186, 0.25)",
-        }}
-      >
-        {icon}
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 700,
-          fontSize: "1.1rem",
-          textAlign: "center",
-          color: "#0a1f44",
-          whiteSpace: "pre-line",
-          lineHeight: 1.3,
-          fontFamily: "'Inter', sans-serif",
-        }}
-      >
-        {title}
-      </Typography>
-    </Box>
-  );
-}
 
 const partners = [
   {
@@ -240,9 +182,9 @@ export default function Technique() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: 4 }}>
           {formationTech.technical.map((formation, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
+            <Box key={index}>
               <Box
                 sx={{
                   height: "100%",
@@ -254,52 +196,59 @@ export default function Technique() {
               >
                 <FormationsCard {...formation} />
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
-      <Box sx={{ py: 0, bgcolor: "#f8f9fc", textAlign: "center" }}>
-  <Container>
-    <Typography
-      variant="h3"
-      sx={{
-        fontWeight: 700,
-        color: "#1a064f",
-        mb: 3,
-        fontSize: { xs: "1.8rem", md: "2.2rem" },
-      }}
-    >
-Tous les modules incluent     </Typography>
+      <Box sx={{ py: 6, bgcolor: "#f8f9fc", textAlign: "center" }}>
+        <Container>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              color: "#1a064f",
+              mb: 4,
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
+            }}
+          >
+            Tous les modules incluent
+          </Typography>
 
-
-    <Box sx={{ mt: 4, display: "flex", justifyContent: "center", flexDirection: "column", gap: 2, alignItems: "center" , mb:4  }}>
-      {[
-        "Un certificat de participation",
-        "Une approche simple, en français ou en wolof selon les profils",
-        "Du mentorat post-formation (3 mois)",
-        "Des opportunités de mise en réseau ou de micro-financement"
-      ].map((item, index) => (
-        <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{
-            width: 24,
-            height: 24,
-            bgcolor: "#48bb78",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "left",
-            justifyContent: "center",
-            mr: 1
+          <Box sx={{ 
+            mt: 4, 
+            display: "flex", 
+            justifyContent: "center", 
+            flexDirection: "column", 
+            gap: 2, 
+            alignItems: "center",
+            mb: 4
           }}>
-            <Typography variant="body2" sx={{ color: "white", fontWeight: 700 }}>✓</Typography>
+            {[
+              "Un certificat de participation",
+              "Une approche simple, en français ou en wolof selon les profils",
+              "Du mentorat post-formation (3 mois)",
+              "Des opportunités de mise en réseau ou de micro-financement"
+            ].map((item, index) => (
+              <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
+                <Box sx={{
+                  width: 24,
+                  height: 24,
+                  bgcolor: "#48bb78",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  mr: 2
+                }}>
+                  <Typography variant="body2" sx={{ color: "white", fontWeight: 700 }}>✓</Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: "#4a5568" }}>{item}</Typography>
+              </Box>
+            ))}
           </Box>
-          <Typography variant="body2" sx={{ color: "#4a5568" }}>{item}</Typography>
-        </Box>
-      ))}
-    </Box>
-  </Container>
-</Box>
-     
+        </Container>
+      </Box>
     </Box>
   );
 }
