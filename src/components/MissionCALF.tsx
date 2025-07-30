@@ -3,7 +3,6 @@
 import {
   Box,
   Typography,
-  Grid,
   Paper,
   List,
   ListItem,
@@ -54,8 +53,8 @@ export default function MissionValueCALF() {
         pointerEvents: "none"
       }} />
 
-      <Grid container spacing={6} alignItems="stretch" sx={{ position: "relative", zIndex: 1 }}>
-        <Grid item xs={12} md={6}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6, alignItems: 'stretch', position: "relative", zIndex: 1 }}>
+        <Box sx={{ flex: { xs: '1', md: '6' } }}>
           <Typography variant="overline" sx={{
             color: "#fb5607",
             fontWeight: 700,
@@ -103,9 +102,9 @@ export default function MissionValueCALF() {
               </Paper>
             ))}
           </Box>
-        </Grid>
+        </Box>
 
-        <Grid item xs={12} md={6}>
+        <Box sx={{ flex: { xs: '1', md: '6' } }}>
           <Paper elevation={0} sx={{
             height: "100%",
             p: 4,
@@ -157,7 +156,7 @@ export default function MissionValueCALF() {
                 </Typography>
               </Box>
 
-              <Grid container spacing={3} sx={{ pl: 1, justifyContent: "center" }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, pl: 1, justifyContent: "center" }}>
                 {[
                   {
                     icon: <Group fontSize="medium" />,
@@ -180,7 +179,7 @@ export default function MissionValueCALF() {
                     desc: "Assurer un suivi des parcours pour une transformation durable"
                   }
                 ].map((value, index) => (
-                  <Grid item xs={12} sm={6} key={index}>
+                  <Box key={index} sx={{ flex: { xs: '1', sm: '0 0 calc(50% - 12px)' } }}>
                     <Paper elevation={0} sx={{
                       p: 2.5,
                       width: "23rem",
@@ -223,13 +222,13 @@ export default function MissionValueCALF() {
                         {value.desc}
                       </Typography>
                     </Paper>
-                  </Grid>
+                  </Box>
                 ))}
-              </Grid>
+              </Box>
             </Box>
           </Paper>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Stack, Grid, Chip } from "@mui/material";
+import { Box, Typography, Stack, Chip } from "@mui/material";
 
 export default function HeroCALF() {
   return (
@@ -14,8 +14,8 @@ export default function HeroCALF() {
         overflow: "hidden",
       }}
     >
-      <Grid container spacing={4} alignItems="center">
-        <Grid item xs={12} md={7}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center' }}>
+        <Box sx={{ flex: { xs: '1', md: '7' } }}>
           <Stack spacing={2}>
             <Typography
               variant="h3"
@@ -72,9 +72,9 @@ export default function HeroCALF() {
               />
             </Stack>
           </Stack>
-        </Grid>
+        </Box>
 
-        <Grid item xs={12} md={5}>
+        <Box sx={{ flex: { xs: '1', md: '5' } }}>
           <Box
             sx={{
               borderRadius: 4,
@@ -100,8 +100,8 @@ export default function HeroCALF() {
               }}
             />
           </Box>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
 
       {/* Plan d'action 2026 */}
       <Box

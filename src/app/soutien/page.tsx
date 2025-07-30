@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import React, { useState, useEffect } from 'react';
 import { 
-  Box, Typography, Grid, Button, Container, Paper, TextField, 
+  Box, Typography, Button, Container, Paper, TextField, 
   Card, useTheme, Link
 } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -107,8 +107,13 @@ const partners = [
     
       <Box sx={{ py: 10, background: 'linear-gradient(to bottom, #ffffff 0%, #f0e9ff 100%)' }}>
         <Container maxWidth="lg">
-          <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Box sx={{ 
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            gap: 6,
+            alignItems: 'center'
+          }}>
+            <Box>
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -157,10 +162,30 @@ const partners = [
                   de nos bénéficiaires d'accéder à des postes décisionnels.
                 </Typography>
               </motion.div>
-            </Grid>
+            </Box>
             
-           
-          </Grid>
+            {/* Deuxième colonne de la grille */}
+            <Box>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <Box
+                  component="img"
+                  src="/assets/images/team.jpg"
+                  alt="Impact du leadership féminin"
+                  sx={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 2,
+                    boxShadow: 3
+                  }}
+                />
+              </motion.div>
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -193,9 +218,17 @@ const partners = [
             </Typography>
           </motion.div>
 
-       <Grid container spacing={3} justifyContent="center">
-  {waysToSupport.map((way, index) => (
-    <Grid item xs={12} sm={6} md={3} key={index}>
+       <Box sx={{
+         display: 'grid',
+         gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
+         gap: 3,
+         justifyContent: 'center',
+         width: '100%',
+         maxWidth: '1200px',
+         mx: 'auto',
+         px: { xs: 2, sm: 3 }
+       }}>
+         {waysToSupport.map((way, index) => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -251,15 +284,10 @@ const partners = [
           </Typography>
         </Box>
       </motion.div>
-    </Grid>
-  ))}
-</Grid>
-
+    ))}
+    </Box>
         </Container>
       </Box>
-
-   
-
     </Box>
   );
 };

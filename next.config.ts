@@ -35,18 +35,19 @@ const nextConfig: NextConfig = {
   generateEtags: true, // Activer les ETags pour la mise en cache
   compress: true, // Activer la compression GZIP
   reactStrictMode: true, // Activer le mode strict React
-  swcMinify: true, // Utiliser SWC pour la minification
   
   // Configuration des en-têtes de sécurité
-  async headers() {
-    return [
-      {
-        // Appliquer ces en-têtes à tous les chemins
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // Note: Les headers ne fonctionnent pas avec output: export
+  // Ils doivent être configurés au niveau du serveur web
+  // async headers() {
+  //   return [
+  //     {
+  //       // Appliquer ces en-têtes à tous les chemins
+  //       source: '/:path*',
+  //       headers: securityHeaders,
+  //     },
+  //   ];
+  // },
   
   // Configuration des images
   images: {
